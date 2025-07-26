@@ -1,0 +1,123 @@
+@import "tailwindcss";
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 230 10% 9%;
+  --card: 0 0% 100%;
+  --card-foreground: 230 10% 9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 230 10% 9%;
+  --primary: 230 50% 15%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 220 14% 96%;
+  --secondary-foreground: 230 10% 25%;
+  --muted: 220 14% 96%;
+  --muted-foreground: 220 8% 46%;
+  --accent: 220 14% 95%;
+  --accent-foreground: 230 10% 25%;
+  --destructive: 0 75% 55%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 220 13% 91%;
+  --input: 220 13% 91%;
+  --ring: 230 50% 15%;
+  --radius: 0.75rem;
+  
+  /* Custom font variables */
+  --font-manrope: 'Manrope Variable', system-ui, -apple-system, sans-serif;
+  --font-inter: 'Inter Variable', system-ui, -apple-system, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: 230 15% 6%;
+    --foreground: 0 0% 95%;
+    --card: 230 15% 9%;
+    --card-foreground: 0 0% 95%;
+    --popover: 230 15% 9%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 220 70% 70%;
+    --primary-foreground: 230 15% 6%;
+    --secondary: 230 12% 15%;
+    --secondary-foreground: 0 0% 85%;
+    --muted: 230 12% 15%;
+    --muted-foreground: 220 8% 55%;
+    --accent: 230 12% 18%;
+    --accent-foreground: 0 0% 85%;
+    --destructive: 0 65% 65%;
+    --destructive-foreground: 0 0% 95%;
+    --border: 230 12% 18%;
+    --input: 230 12% 18%;
+    --ring: 220 70% 70%;
+  }
+}
+
+/* Base styles */
+* {
+  border-color: hsl(var(--border));
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-feature-settings: "rlig" 1, "calt" 1;
+  letter-spacing: -0.011em;
+}
+
+/* Improved typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-manrope);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+
+/* Smooth scrolling and focus */
+.scroll-smooth {
+  scroll-behavior: smooth;
+}
+
+/* Animation utilities */
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Selection styles */
+::selection {
+  background-color: hsl(var(--primary) / 0.1);
+  color: hsl(var(--primary));
+}
+
+/* Focus styles */
+*:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+  border-radius: calc(var(--radius) - 2px);
+}
